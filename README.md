@@ -4,10 +4,10 @@ Turn your post text into on-brand social media graphics and looping GIFs, in you
 
 <table>
   <tr>
-    <td><img src="examples/explainer.png" width="200" alt="Explainer graphic"></td>
-    <td><img src="examples/story.gif" width="200" alt="Animated story graphic"></td>
-    <td><img src="examples/quote-square.png" width="200" alt="Square quote graphic"></td>
-    <td><img src="examples/brand-kit-preview.png" width="200" alt="Brand kit preview"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/the-mainak-banerjee/post-graphics-skills@main/examples/explainer.png" width="200" alt="Explainer graphic"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/the-mainak-banerjee/post-graphics-skills@main/examples/story.gif" width="200" alt="Animated story graphic"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/the-mainak-banerjee/post-graphics-skills@main/examples/quote-square.png" width="200" alt="Square quote graphic"></td>
+    <td><img src="https://cdn.jsdelivr.net/gh/the-mainak-banerjee/post-graphics-skills@main/examples/brand-kit-preview.png" width="200" alt="Brand kit preview"></td>
   </tr>
 </table>
 
