@@ -8,9 +8,9 @@ Copy this, paste it into Claude Code (terminal, desktop app or VS Code), and pre
 
 ```text
 Install the post-graphics skills for me and get them ready to use:
-1. Run: npx -y skills add <your-github-name>/post-graphics-skills -g -a claude-code -s '*' -y --copy
+1. Run: npx -y skills add the-mainak-banerjee/post-graphics-skills -g -a claude-code -s '*' -y --copy
    If Node.js is missing, tell me in plain words how to install it, then try again.
-   If npx fails for another reason, download https://github.com/<your-github-name>/post-graphics-skills
+   If npx fails for another reason, download https://github.com/the-mainak-banerjee/post-graphics-skills
    and copy the three folders inside skills/ into ~/.claude/skills/.
 2. Run the one-time setup: node ~/.claude/skills/post-graphic/scripts/setup.mjs
    Wait until it prints READY.
@@ -21,10 +21,10 @@ Install the post-graphics skills for me and get them ready to use:
 **Prefer the terminal?** One line:
 
 ```
-npx skills add <your-github-name>/post-graphics-skills
+npx skills add the-mainak-banerjee/post-graphics-skills
 ```
 
-Or install one at a time: `npx skills add <your-github-name>/post-graphics-skills --skill post-graphic`. Needs Node.js 18 or newer. Works with Claude Code and other coding agents. Using the Claude app or claude.ai instead? See [Install](#install).
+Or install one at a time: `npx skills add the-mainak-banerjee/post-graphics-skills --skill post-graphic`. Needs Node.js 18 or newer. Works with Claude Code and other coding agents. Using the Claude app or claude.ai instead? See [Install](#install).
 
 | Skill | What it does | Say something like |
 |---|---|---|
@@ -62,7 +62,7 @@ Skills you upload are private to your own account.
 Run this once in your terminal:
 
 ```
-npx skills add <your-github-name>/post-graphics-skills
+npx skills add the-mainak-banerjee/post-graphics-skills
 ```
 
 Pick Claude Code when it asks which agent, then open Claude Code and say **"Set up my brand kit"**. The first time you make a graphic, Claude installs the drawing tool by itself (about a minute, once). Just click **Allow** when it asks.
@@ -72,7 +72,7 @@ Not comfortable with a terminal? Use the [one-step prompt](#install-in-one-step-
 Prefer Claude Code plugins? This does the same:
 
 ```
-/plugin marketplace add <your-github-name>/post-graphics-skills
+/plugin marketplace add the-mainak-banerjee/post-graphics-skills
 /plugin install post-graphics@post-graphics-skills
 ```
 
@@ -81,8 +81,8 @@ Your kit is saved as `brand-kit.md` in your project, or as `~/.claude/brand-kit.
 #### For Claude: how to install these skills
 
 When someone asks you to install this repo:
-1. Run `npx -y skills add <your-github-name>/post-graphics-skills -g -a claude-code -s '*' -y --copy`. Leave out `-g` if they asked for this project only.
-2. If that fails, download `https://github.com/<your-github-name>/post-graphics-skills/archive/refs/heads/main.zip`, unzip it to a temporary folder, and copy the three folders inside `skills/` (`post-brand-kit`, `post-graphic`, `post-animator`) into `~/.claude/skills/` (or `.claude/skills/` for this project only). Replace older copies with the same names.
+1. Run `npx -y skills add the-mainak-banerjee/post-graphics-skills -g -a claude-code -s '*' -y --copy`. Leave out `-g` if they asked for this project only.
+2. If that fails, download `https://github.com/the-mainak-banerjee/post-graphics-skills/archive/refs/heads/main.zip`, unzip it to a temporary folder, and copy the three folders inside `skills/` (`post-brand-kit`, `post-graphic`, `post-animator`) into `~/.claude/skills/` (or `.claude/skills/` for this project only). Replace older copies with the same names.
 3. Run `node ~/.claude/skills/post-graphic/scripts/setup.mjs`. Wait for `READY`. If Node is missing, run `pip install playwright pillow` and `python -m playwright install chromium` instead.
 4. Delete any temporary folder you made.
 5. Tell them in plain words: it's installed, they may need a new session, and next they can say "Set up my brand kit".
