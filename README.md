@@ -2,6 +2,24 @@
 
 Three Claude skills that turn your post text into on-brand social media graphics and looping GIFs.
 
+## Install in one step: give this prompt to Claude Code
+
+Copy this, paste it into Claude Code (terminal, desktop app or VS Code), and press Enter. Claude does the rest. Click **Allow** when it asks.
+
+```text
+Install the post-graphics skills for me and get them ready to use:
+1. Run: npx -y skills add <your-github-name>/post-graphics-skills -g -a claude-code -s '*' -y --copy
+   If Node.js is missing, tell me in plain words how to install it, then try again.
+   If npx fails for another reason, download https://github.com/<your-github-name>/post-graphics-skills
+   and copy the three folders inside skills/ into ~/.claude/skills/.
+2. Run the one-time setup: node ~/.claude/skills/post-graphic/scripts/setup.mjs
+   Wait until it prints READY.
+3. Tell me in plain words that it worked, that I may need to start a new session,
+   and that I can now say "Set up my brand kit".
+```
+
+**Prefer the terminal?** One line:
+
 ```
 npx skills add <your-github-name>/post-graphics-skills
 ```
@@ -49,9 +67,7 @@ npx skills add <your-github-name>/post-graphics-skills
 
 Pick Claude Code when it asks which agent, then open Claude Code and say **"Set up my brand kit"**. The first time you make a graphic, Claude installs the drawing tool by itself (about a minute, once). Just click **Allow** when it asks.
 
-Not comfortable with a terminal? Paste this into Claude Code and it does everything for you:
-
-> Install the post-graphics skills from https://github.com/<your-github-name>/post-graphics-skills for all my projects, then set them up.
+Not comfortable with a terminal? Use the [one-step prompt](#install-in-one-step-give-this-prompt-to-claude-code) at the top of this page instead.
 
 Prefer Claude Code plugins? This does the same:
 
@@ -65,10 +81,10 @@ Your kit is saved as `brand-kit.md` in your project, or as `~/.claude/brand-kit.
 #### For Claude: how to install these skills
 
 When someone asks you to install this repo:
-1. Get the repo: `git clone --depth 1 https://github.com/<your-github-name>/post-graphics-skills` into a temporary folder. If git is not installed, download `https://github.com/<your-github-name>/post-graphics-skills/archive/refs/heads/main.zip` and unzip it.
-2. Copy the three folders inside `skills/` (`post-brand-kit`, `post-graphic`, `post-animator`) into `~/.claude/skills/`. If they asked for this project only, use `.claude/skills/` instead. Replace older copies with the same names.
+1. Run `npx -y skills add <your-github-name>/post-graphics-skills -g -a claude-code -s '*' -y --copy`. Leave out `-g` if they asked for this project only.
+2. If that fails, download `https://github.com/<your-github-name>/post-graphics-skills/archive/refs/heads/main.zip`, unzip it to a temporary folder, and copy the three folders inside `skills/` (`post-brand-kit`, `post-graphic`, `post-animator`) into `~/.claude/skills/` (or `.claude/skills/` for this project only). Replace older copies with the same names.
 3. Run `node ~/.claude/skills/post-graphic/scripts/setup.mjs`. Wait for `READY`. If Node is missing, run `pip install playwright pillow` and `python -m playwright install chromium` instead.
-4. Delete the temporary folder.
+4. Delete any temporary folder you made.
 5. Tell them in plain words: it's installed, they may need a new session, and next they can say "Set up my brand kit".
 
 ## How rendering works
