@@ -1,0 +1,8 @@
+{
+  "name": "post-graphics",
+  "description": "Brand kit, on-brand post graphics (PNG) and looping GIF animation for LinkedIn and other social posts.",
+  "version": "1.0.0",
+  "author": { "name": "Mainak Banerjee" },
+  "license": "MIT",
+  "keywords": ["linkedin", "graphics", "gif", "brand", "social media"]
+}

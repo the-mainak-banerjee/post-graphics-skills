@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- FONT LINK: paste the kit's Google Fonts <link> on the next line -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* BRAND TOKENS: replace this whole :root block with the kit's CSS tokens */
+:root {
+  --bg: #F6F8FC; --card: #FFFFFF; --card-border: #E1E8F3; --text: #0B1B33; --muted: #5B6B85;
+  --primary: #004AAD; --accent: #1D7AD0; --on-primary: #FFFFFF;
+  --pattern: rgba(0, 74, 173, .09); --deco: #D3DDEC;
+  --font-heading: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+/* ---------- base: keep ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { --w: 1080px; --h: 1350px; width: var(--w); height: var(--h); overflow: hidden; }
+body.square { --h: 1080px; }
+.slide { position: relative; width: var(--w); height: var(--h); background: var(--bg); color: var(--text); font-family: var(--font-body); overflow: hidden; }
+.slide::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(160deg, rgba(0,0,0,.95), rgba(0,0,0,.5) 50%, rgba(0,0,0,.95));
+          mask-image: linear-gradient(160deg, rgba(0,0,0,.95), rgba(0,0,0,.5) 50%, rgba(0,0,0,.95)); }
+.slide[data-pattern="grid"]::before { background-image: linear-gradient(var(--pattern) 1px, transparent 1px), linear-gradient(90deg, var(--pattern) 1px, transparent 1px); background-size: 44px 44px; }
+.slide[data-pattern="dots"]::before { background-image: radial-gradient(var(--pattern) 2.2px, transparent 2.6px); background-size: 30px 30px; }
+.slide[data-pattern="lines"]::before { background-image: repeating-linear-gradient(45deg, var(--pattern) 0 1px, transparent 1px 24px); }
+.deco { position: absolute; border: 3px solid var(--deco); transform: rotate(32deg); pointer-events: none; }
+.slide[data-pattern="shapes"] .deco { border-radius: 50%; transform: none; }
+.inner { position: relative; padding: 90px; height: 100%; display: flex; flex-direction: column; gap: 44px; }
+.framed { position: relative; margin: 26px 0; }
+.framed > .outline { position: absolute; inset: -26px; border: 2px solid var(--accent); border-radius: 36px; pointer-events: none; }
+.card { position: relative; background: var(--card); border: 1px solid var(--card-border); border-radius: 26px; box-shadow: var(--shadow); }
+.k { color: var(--primary); }
+.pill { display: inline-block; flex: none; background: var(--primary); color: var(--on-primary); font-family: var(--font-heading); font-weight: 700; font-size: 28px; line-height: 1; padding: 12px 20px; border-radius: 999px; min-width: 78px; text-align: center; }
+.pbar { display: flex; align-items: center; gap: 20px; }
+.pbar .photo { width: 84px; height: 84px; border-radius: 50%; object-fit: cover; border: 4px solid var(--card); box-shadow: 0 0 0 3px var(--accent), var(--shadow); background: var(--primary); }
+.pbar b { display: block; font-family: var(--font-heading); font-weight: 700; font-size: 32px; }
+.pbar span { display: block; font-size: 26px; color: var(--muted); }
+/* ---------- this layout ---------- */
+.inner { justify-content: center; }
+.quote { padding: 70px 64px 60px; }
+.mark { position: absolute; top: -46px; left: 54px; font-family: var(--font-heading); font-weight: 800; font-size: 150px; line-height: 1; color: var(--primary); background: var(--bg); padding: 0 14px; height: 96px; overflow: hidden; }
+.quote p { font-family: var(--font-heading); font-weight: 700; font-size: 64px; line-height: 1.18; }
+.quote p .k { color: var(--primary); }
+.quote small { display: block; margin-top: 30px; font-size: 28px; color: var(--muted); }
+.pbar.big { margin-top: 70px; padding: 26px 30px; }
+.pbar.big .photo { width: 116px; height: 116px; }
+.pbar.big b { font-size: 36px; }
+.follow { margin-left: auto; background: var(--primary); color: var(--on-primary); font-family: var(--font-heading); font-weight: 700; font-size: 28px; padding: 16px 30px; border-radius: 999px; }
+body.square .quote p { font-size: 54px; }
+body.square .pbar.big { margin-top: 50px; }
+</style>
+</head>
+<body>
+<div class="slide" data-pattern="grid">
+  <div class="deco" style="width:220px;height:220px;left:-95px;top:-75px"></div>
+  <div class="deco" style="width:110px;height:110px;left:120px;top:-55px"></div>
+  <div class="deco" style="width:240px;height:240px;right:-105px;bottom:-95px"></div>
+  <div class="deco" style="width:110px;height:110px;right:140px;bottom:-55px"></div>
+  <div class="inner">
+    <div class="framed">
+      <div class="outline"></div>
+      <div class="card quote">
+        <div class="mark">&ldquo;</div>
+        <p>{{QUOTE_START}} <span class="k">{{QUOTE_KEY_WORDS}}</span></p>
+        <small>{{CONTEXT_LINE_OR_DELETE}}</small>
+      </div>
+    </div>
+    <div class="card pbar big">
+      <div class="photo"></div>
+      <div><b>{{NAME}}</b><span>{{ROLE}}</span></div>
+      <div class="follow">Follow</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "post-graphics-skills",
+  "owner": { "name": "Mainak Banerjee" },
+  "plugins": [
+    {
+      "name": "post-graphics",
+      "source": "./",
+      "description": "Brand kit, on-brand post graphics (PNG) and looping GIF animation for LinkedIn and other social posts."
+    }
+  ]
+}

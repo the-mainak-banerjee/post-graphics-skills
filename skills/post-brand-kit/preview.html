@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- FONT LINK: paste the kit's Google Fonts <link> on the next line -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* BRAND TOKENS: replace this whole :root block with the kit's CSS tokens */
+:root {
+  --bg: #F6F8FC; --card: #FFFFFF; --card-border: #E1E8F3; --text: #0B1B33; --muted: #5B6B85;
+  --primary: #004AAD; --accent: #1D7AD0; --on-primary: #FFFFFF;
+  --pattern: rgba(0, 74, 173, .09); --deco: #D3DDEC;
+  --font-heading: 'Poppins', sans-serif; --font-body: 'Inter', sans-serif;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { width: 1080px; height: 1350px; overflow: hidden; }
+.slide { position: relative; width: 1080px; height: 1350px; background: var(--bg); color: var(--text); font-family: var(--font-body); overflow: hidden; }
+/* background pattern: set data-pattern on .slide to grid | dots | lines | shapes */
+.slide::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  -webkit-mask-image: linear-gradient(160deg, rgba(0,0,0,.95), rgba(0,0,0,.5) 50%, rgba(0,0,0,.95));
+          mask-image: linear-gradient(160deg, rgba(0,0,0,.95), rgba(0,0,0,.5) 50%, rgba(0,0,0,.95)); }
+.slide[data-pattern="grid"]::before { background-image: linear-gradient(var(--pattern) 1px, transparent 1px), linear-gradient(90deg, var(--pattern) 1px, transparent 1px); background-size: 44px 44px; }
+.slide[data-pattern="dots"]::before { background-image: radial-gradient(var(--pattern) 2.2px, transparent 2.6px); background-size: 30px 30px; }
+.slide[data-pattern="lines"]::before { background-image: repeating-linear-gradient(45deg, var(--pattern) 0 1px, transparent 1px 24px); }
+.deco { position: absolute; border: 3px solid var(--deco); transform: rotate(32deg); pointer-events: none; }
+.slide[data-pattern="shapes"] .deco { border-radius: 50%; transform: none; }
+.inner { position: relative; padding: 90px; height: 100%; display: flex; flex-direction: column; gap: 40px; }
+.label { font-size: 26px; font-weight: 600; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; }
+h1 { font-family: var(--font-heading); font-weight: 800; font-size: 84px; line-height: 1.05; }
+h1 .k { color: var(--primary); }
+.swatches { display: flex; gap: 18px; }
+.sw { flex: 1; background: var(--card); border: 1px solid var(--card-border); border-radius: 18px; padding: 14px; box-shadow: var(--shadow); }
+.sw i { display: block; height: 90px; border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--card-border); }
+.sw b { display: block; font-size: 26px; font-weight: 600; }
+.sw span { font-size: 26px; color: var(--muted); }
+.frame-wrap { position: relative; margin-top: 10px; }
+.outline { position: absolute; inset: -26px; border: 2px solid var(--accent); border-radius: 34px; }
+.card { position: relative; background: var(--card); border: 1px solid var(--card-border); border-radius: 24px; padding: 44px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 22px; }
+.row { display: flex; gap: 22px; align-items: flex-start; }
+.pill { flex: none; min-width: 78px; text-align: center; background: var(--primary); color: var(--on-primary); font-family: var(--font-heading); font-weight: 700; font-size: 28px; padding: 6px 18px; border-radius: 999px; }
+.row p { font-size: 30px; line-height: 1.35; }
+.row p em { font-style: normal; color: var(--accent); font-weight: 600; }
+.pbar { margin-top: auto; display: flex; align-items: center; gap: 22px; }
+.pbar img, .pbar .ph { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 4px solid var(--card); box-shadow: 0 0 0 3px var(--accent), var(--shadow); background: var(--primary); }
+.pbar b { display: block; font-family: var(--font-heading); font-weight: 700; font-size: 34px; }
+.pbar span { font-size: 26px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="slide" data-pattern="grid">
+  <div class="deco" style="width:220px;height:220px;left:-90px;top:-70px"></div>
+  <div class="deco" style="width:120px;height:120px;left:110px;top:-60px"></div>
+  <div class="deco" style="width:240px;height:240px;right:-100px;bottom:-90px"></div>
+  <div class="deco" style="width:110px;height:110px;right:130px;bottom:-50px"></div>
+  <div class="inner">
+    <div class="label">Brand kit preview</div>
+    <h1>This is how my <span class="k">graphics</span> look.</h1>
+    <div class="swatches">
+      <div class="sw"><i style="background:var(--primary)"></i><b>Primary</b><span class="hex" data-var="--primary"></span></div>
+      <div class="sw"><i style="background:var(--accent)"></i><b>Accent</b><span class="hex" data-var="--accent"></span></div>
+      <div class="sw"><i style="background:var(--text)"></i><b>Text</b><span class="hex" data-var="--text"></span></div>
+      <div class="sw"><i style="background:var(--bg)"></i><b>Background</b><span class="hex" data-var="--bg"></span></div>
+    </div>
+    <div class="frame-wrap">
+      <div class="outline"></div>
+      <div class="card">
+        <div class="row"><span class="pill">01</span><p>Headings in the <em>heading font</em>, body text in the body font.</p></div>
+        <div class="row"><span class="pill">02</span><p>Cards sit on a patterned background, <em>never a plain one</em>.</p></div>
+        <div class="row"><span class="pill">03</span><p>Shadows stay soft. No text under 26 px.</p></div>
+      </div>
+    </div>
+    <div class="pbar">
+      <!-- PROFILE PHOTO: replace the .ph div with <img src="photo.jpg"> if the kit has a photo -->
+      <div class="ph"></div>
+      <div><b>{{NAME}}</b><span>{{ROLE}}</span></div>
+    </div>
+  </div>
+</div>
+<script>
+// Writes each swatch's hex value from the tokens, so the preview always matches the kit.
+const cs = getComputedStyle(document.documentElement);
+document.querySelectorAll('.hex').forEach((el) => { el.textContent = cs.getPropertyValue(el.dataset.var).trim().toUpperCase(); });
+</script>
+</body>
+</html>
